@@ -16,8 +16,8 @@ ii) Preprocessing of the generated file which included dropping the null values,
 	sorting, normalising and validating the columns.
 	
 ## Metadata file Output:
-![png](images/Metatdata output.PNG)
+![png](images/Metatdata_output.PNG)
 
 ## Preprocessed file output:
-![png](images/Preprocessed data.PNG)
+![png](images/Preprocessed_data.PNG)
 
