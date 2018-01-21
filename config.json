@@ -1,0 +1,24 @@
+{
+	"inputfile": "sample-bank-data.csv",
+	"outputfile": "processed-bank-data.csv",
+	"metafile": "metadata.json",
+	"format": "tabular",
+	"separator": ",",
+	"preprocess": {
+		"missing": {
+			"dropnull": [
+				"income"
+			],
+			"fillnull": {
+				"children": "0",
+				"mortgage": "NO"
+			}
+		},
+		"normalise": ["age"],
+		"sorting": {
+			"field": "income",
+			"order": "desc"
+		},
+		"validate_card": true
+	}
+}
