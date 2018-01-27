@@ -1,14 +1,17 @@
-
 This was a coursework project which is written in python 2.6 and no external libraries were used.
 
-###Generating metadata:
+### Generating metadata:
 1. Read from the config file the instructions (file to open, columns to pre-process...)
 2. Extract the data from a file: can be a .csv, a .txt or a .json
 3. Use regex to determine if the column is numeric or not
 4. Generate metadata with: number of rows and fields, unique values (for string values) and min/max (for numeric values)
 
-###Pre-process data:
-5. Dropping null values, filling missing values , sorting (asc or desc), normalising and validating credit card numbers (using regex)
+### Pre-process data:
+5. Dropping null values
+6. Filling missing values 
+7. Sorting (asc or desc)
+8. Normalising 
+9. Validating credit card numbers (using regex)
 
 ### Notes
 Once the repository is downloaded, open CMD and type: python process.py config.json
@@ -16,12 +19,12 @@ Once the repository is downloaded, open CMD and type: python process.py config.j
   other functions in a dedicated order.
 - The config.json file has all the information and instructions related to the operations to be performed on the file.
 
+#### Metadata file Output:
+![png](images/Metatdata_output.PNG)
 
 #### Preprocessed file output:
 ![png](images/Preprocessed_data.PNG)
 
-#### Metadata file Output:
-![png](images/Metatdata_output.PNG)
 
 ## Given below is the code with description of every line 
 
