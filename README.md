@@ -1,24 +1,34 @@
-# Generating Metadata and Preprocessing
-
-The project was focused towards:
-1. Generating Metadata from the input file which can be .txt,.csv or .json
-   While generating the metadata file we read the type of file and calculate number of rows and columns.
-   For every column we check the type of column,if its string we print the number of unique values
-   and if its numeric then we print the maximum and minimum value.
-2. Preprocessing of the generated file which included dropping the null values, filling missing values,
-   sorting, normalising and validating the columns.
 
 This was a coursework project which is written in python 2.6 and no external libraries were used.
 
+###Generating metadata:
+1. Read from the config file the instructions (file to open, columns to pre-process...)
+2. Extract the data from a file: can be a .csv, a .txt or a .json
+3. Use regex to determine if the column is numeric or not
+4. Generate metadata with: number of rows and fields, unique values (for string values) and min/max (for numeric values)
+
+###Pre-process data:
+5. Dropping null values, filling missing values , sorting (asc or desc), normalising and validating credit card numbers (using regex)
+
+### Notes
 Once the repository is downloaded, open CMD and type: python process.py config.json
 - The process.py file contains the whole program. It executes with the main() function which further calls 
   other functions in a dedicated order.
 - The config.json file has all the information and instructions related to the operations to be performed on the file.
 
 
+#### Preprocessed file output:
+![png](images/Preprocessed_data.PNG)
+
+#### Metadata file Output:
+![png](images/Metatdata_output.PNG)
+
 ## Given below is the code with description of every line 
 
 ```python
+
+'''Generating meta-data'''
+
 import sys
 import csv
 import json
@@ -140,10 +150,12 @@ def generateMetadata(l, data):
     return metadataoutput
 ```
 
-## Metadata file Output:
-![png](images/Metatdata_output.PNG)	
+	
 
 ```python
+
+'''Pre-processing data'''
+
 def CreateJSONFile(l, mydict):  # This funcion writes a Json file, it gets the input as 
     with open(l.get('metafile'),'w') as f:   # Open the file as 
         json.dump(mydict,f, indent=4,sort_keys=False)
@@ -252,10 +264,10 @@ def preprocessData(config, data):  # This function is used to preprocess the dat
     return preprocesseddata
 ```
 
-## Preprocessed file output:
-![png](images/Preprocessed_data.PNG)
-
 ```python
+
+'''The main function'''
+
 def main(configFile):  # This is the main function which gets the input as the config.json file
     config = readConfig(configFile)    #   Reading the config file
     myfile = config.get("inputfile")   # Getting the inputfile name frrom Config.json
@@ -273,9 +285,6 @@ def main(configFile):  # This is the main function which gets the input as the c
             clean.writerow(line)
     return 
 
-###########################################
-# DO NOT CHANGE THE CODE WRITTEN BELOW    #
-###########################################
 if __name__ == '__main__':
     if(len(sys.argv)>1):
         configFile = sys.argv[1]
