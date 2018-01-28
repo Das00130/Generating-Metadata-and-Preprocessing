@@ -4,15 +4,15 @@ This was a coursework project which is written in python 2.6 and no external lib
 1. Read from the config file the instructions (file to open, columns to pre-process...)
 2. Extract the data from a file: can be a .csv, a .txt or a .json
 3. Find the number of rows and fields
-3. Use regex to determine the data type: determine the min/max (if numeric) and the unique values (if string)
-4. Generate a file with the meta-data information
+4. Use regex to determine the data type: determine the min/max (if numeric) and the unique values (if string)
+5. Generate a file with the meta-data information
 
 ### Pre-process data:
-5. Dropping null values
-6. Filling missing values 
-7. Sorting (asc or desc)
-8. Normalising
-9. Validating credit card numbers (using regex)
+6. Dropping null values
+7. Filling missing values 
+8. Sorting (asc or desc)
+9. Normalising
+10. Validating credit card numbers (using regex)
 
 ### Notes
 Once the repository is downloaded, open CMD and type: python process.py config.json
